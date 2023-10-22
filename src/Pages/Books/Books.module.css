@@ -1,0 +1,35 @@
+.section__container
+{
+  background-color: aquamarine;
+  font-size: 2rem;
+}
+
+.section__container:not(:last-child)
+{
+  
+  margin-bottom: 6rem;
+}
+
+.section__container h1
+{
+  background-color: aqua;
+  text-align: center;
+  text-decoration: dotted;
+}
+
+.section__container h2
+{
+  background-color: brown;
+  margin-bottom: 2rem;
+
+}
+
+.section__container p
+{
+  background-color: beige;
+  font-family: serif;
+  padding: 2rem;
+  text-align: justify;
+  border: 2px dotted white;
+  border: solid rgb(0, 0, 0) 1rem;
+}
