@@ -26,6 +26,10 @@ function Home() {
       <h1> Home</h1>
       {/*Loop on data and display as a list*/}
       <p>
+        <center>
+          <h1>George R. R.Martin </h1>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg/330px-Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg"></img>
+        </center>
         Building a fun application called Game of Thrones, Game of Thrones used
         seven writers over its six seasons. Benioff and Weiss wrote most of each
         season's episodes.[73] A Song of Ice and Fire author George R. R. Martin
