@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Capstone Project
+
+Link to public site: https://kimo2228.github.io/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
