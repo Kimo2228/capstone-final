@@ -13,8 +13,11 @@ function Characters() {
   // Function to fetch character data from an API
   const fetchCharacters = async () => {
     try {
+      console.log(
+        `call api with page size: ${pageSize} and page number: ${pageNumber} `
+      );
       const response = await fetch(
-        `https://www.anapioficeandfire.com/api/characters?page=${pageNumber}&pageSize=10`
+        `https://www.anapioficeandfire.com/api/characters?page=${pageNumber}&pageSize=${pageSize}}`
       );
       const data = await response.json();
       setCharacters(data);
@@ -27,27 +30,15 @@ function Characters() {
     fetchCharacters();
   }, [currentPage, pageSize]);
 
-  // Handle page change
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
-
-  // Handle page size change
-  const handlePageSizeChange = (newSize) => {
-    setPageSize(newSize);
-    setCurrentPage(1); // Reset to the first page when changing page size
-  };
-
   // Calculate the characters to display on the current page
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const charactersToDisplay = characters.slice(startIndex, endIndex);
 
   return (
     <section className={styles["section__container"]}>
       <div>
         <ul>
-          {charactersToDisplay.map((character) => (
+          {characters.map((character) => (
             <li key={character.id}>
               <Link to={`/character?api=${character.url}`}>
                 {character.name || character.aliases}
@@ -62,7 +53,20 @@ function Characters() {
         </ul>
       </div>
       <footer className={["app__footer"]}>
-        <PaginationComponent />
+        <PaginationComponent
+          currentPage={currentPage}
+          pageSize={pageSize}
+          totalPages={10}
+          onPageChange={(page) => {
+            console.log("log pafe", page);
+            setPageNumber(page);
+            setCurrentPage(page);
+          }}
+          onPageSizeChange={(size) => {
+            console.log("log size", size);
+            setPageSize(size);
+          }}
+        />
       </footer>
     </section>
   );

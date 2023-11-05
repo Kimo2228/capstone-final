@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const PaginationComponent = ({
   currentPage,
@@ -7,24 +7,40 @@ const PaginationComponent = ({
   onPageChange,
   onPageSizeChange,
 }) => {
-  const isFirstPage = currentPage === 1;
+  const [isFirstPage, setIsFirstPage] = useState(currentPage === 1);
+  const [isLastPage, setIsLastPage] = useState(currentPage === pageSize + 1);
+
+  let evaluateFirstPage = () => {
+    setIsFirstPage(currentPage === 1);
+  };
+
+  let evaluateLastPage = () => {
+    setIsLastPage(currentPage === pageSize + 1);
+  };
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
+      console.log("çurrent page: ", newPage);
       onPageChange(newPage);
     }
+    evaluateFirstPage();
+    evaluateLastPage();
   };
-
   return (
     <div className="paginationComponent">
       <button
-        onClick={() => handlePageChange(currentPage - 1)}
+        onClick={() => handlePageChange(currentPage--)}
         disabled={isFirstPage}
       >
         Previous
       </button>
       <span>Page {currentPage}</span>
-      <button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+      <button
+        disabled={isLastPage}
+        onClick={() => handlePageChange(currentPage++)}
+      >
+        Next
+      </button>
       <select
         value={pageSize}
         onChange={(e) => onPageSizeChange(Number(e.target.value))}
