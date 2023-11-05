@@ -6,12 +6,13 @@ import PaginationComponent from "../../components/PaginationComponent/Pagination
 function Houses() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
+  const [pageNumber, setPageNumber] = useState(1);
   const [houses, setHouses] = useState([]);
 
   const fetchHouses = async () => {
     try {
       const response = await fetch(
-        "https://www.anapioficeandfire.com/api/houses"
+        `https://www.anapioficeandfire.com/api/houses?page=${pageNumber}&pageSize=${pageSize}}`
       );
       const data = await response.json();
       setHouses(data);
@@ -24,24 +25,11 @@ function Houses() {
     fetchHouses();
   }, [currentPage, pageSize]);
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
-
-  const handlePageSizeChange = (newSize) => {
-    setPageSize(newSize);
-    setCurrentPage(1);
-  };
-
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-  const housesToDisplay = houses.slice(startIndex, endIndex);
-
   return (
     <section>
       <div>
         <ul className={styles["lax"]}>
-          {housesToDisplay.map((house) => (
+          {houses.map((house) => (
             <li key={house.id} className={styles["nax"]}>
               {house.name || house.aliases}
               <br />
@@ -55,7 +43,20 @@ function Houses() {
         </ul>
       </div>
       <footer className={["app__footer"]}>
-        <PaginationComponent />
+        <PaginationComponent
+          currentPage={currentPage}
+          pageSize={pageSize}
+          totalPages={10}
+          onPageChange={(page) => {
+            console.log("log pafe", page);
+            setPageNumber(page);
+            setCurrentPage(page);
+          }}
+          onPageSizeChange={(size) => {
+            console.log("log size", size);
+            setPageSize(size);
+          }}
+        />
       </footer>
     </section>
   );

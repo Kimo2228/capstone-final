@@ -30,10 +30,6 @@ function Characters() {
     fetchCharacters();
   }, [currentPage, pageSize]);
 
-  // Calculate the characters to display on the current page
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-
   return (
     <section className={styles["section__container"]}>
       <div>
