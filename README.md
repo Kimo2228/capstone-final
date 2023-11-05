@@ -4,7 +4,81 @@ Link to public site: https://kimo2228.github.io/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
+
+The guided capstone project will involve building a fun application called Game of Thrones, using the API we have provided ice and fire
+The capstone project website, [Title], is a fully functional web application designed to address [briefly describe the problem or need that the website aims to solve]. It serves as the culmination of our academic journey, showcasing the knowledge and skills we've acquired throughout our studies.
+
+## List the features
+
+User Registration and Authentication: Users can create accounts and log in securely to access personalized features.
+
+[Specific Feature 1]: Describe a prominent feature of the website, such as search functionality, data analysis tools, communication features, etc.
+
+[Specific Feature 2]: Highlight another key feature that sets the website apart.
+
+[Specific Feature 3]: Mention additional features that add value to the website.
+
+## Tests
+
+Unit Tests:
+
+Purpose: These tests focus on individual units or components of your application, such as functions, methods, or classes, to ensure they work correctly in isolation.
+Scope: Test each function or method separately, covering a range of expected and edge cases.
+Integration Tests:
+
+Purpose: Integration tests check how different components of your app work together as a whole. It helps identify issues related to data flow and interactions between modules.
+Scope: Test interactions between various units or modules, checking data transfers and dependencies.
+Functional Tests:
+
+Purpose: Functional tests examine the app's features from an end-user perspective, ensuring that the app functions as expected.
+Scope: Test entire user flows or use cases, covering typical user interactions.
+UI/UX Tests:
+
+Purpose: UI and UX tests evaluate the user interface and user experience of the app. They ensure that the app is visually appealing and user-friendly.
+Scope: Evaluate the app's layout, responsiveness, navigation, and visual elements.
+Security Tests:
+
+Purpose: Security tests help identify vulnerabilities in your app that could be exploited by malicious actors. This includes testing for common security issues like SQL injection, cross-site scripting (XSS), and authentication vulnerabilities.
+Scope: Evaluate the app for security flaws and ensure data protection.
+Performance Tests:
+
+Purpose: Performance tests assess how the app performs under different conditions, including load testing to check its scalability and stress testing to identify performance bottlenecks.
+Scope: Test the app's response time, resource usage, and scalability.
+User Acceptance Tests (UAT):
+
+Purpose: UAT involves actual users testing the app to ensure it meets their requirements and expectations.
+Scope: Real users validate the app's functionality and provide feedback.
+Regression Tests:
+
+Purpose: Regression tests are performed after making changes to the app to ensure that new code doesn't introduce new bugs or break existing features.
+Scope: Re-run existing tests to confirm that no previously working features are affected.
+Accessibility Tests:
+
+Purpose: Accessibility tests assess the app's compliance with accessibility standards (e.g., WCAG) to ensure it's usable by people with disabilities.
+Scope: Evaluate the app for accessibility features such as screen reader compatibility and keyboard navigation.
+Usability Tests:
+
+Purpose: Usability tests involve observing real users interacting with the app to identify usability issues and gather feedback for improvements.
+Scope: Analyze how users interact with the app, gather feedback, and mak
+
+## User flow for the website
+
+Homepage:
+
+Users land on the homepage, where they are introduced to the app's purpose and main features.
+They have the option to log in or create an account if necessary.
+Characters:
+Home:
+
+## API
+
+https://www.anapioficeandfire.com/api/characters?page=${pageNumber}&pageSize=10
+
+## Technology stack
+
+Frontend: ReactJs
+Live Server: GitHub Pages
 
 In the project directory, you can run:
 
