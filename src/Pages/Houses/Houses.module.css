@@ -1,10 +1,32 @@
 .lax
 {
-  background-color: whitesmoke;
-  font-size: 1rem;
-}
-
-.nax{
   background-color: aquamarine;
   font-size: 2rem;
+}
+
+.section__container:not(:last-child)
+{
+  
+  margin-bottom: 6rem;
+}
+
+.section__container h1
+{
+  background-color: aqua;
+  text-align: center;
+  text-decoration: dotted;
+}
+
+
+
+.nax
+{
+  background-color: bisque;
+  font-family: serif;
+  padding: 2rem;
+  text-align: justify;
+  border: 2px dotted white;
+  border: solid rgb(3, 3, 3) 1rem;
+  font-size: x-large;
+  
 }
