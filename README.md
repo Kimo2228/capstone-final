@@ -1,6 +1,6 @@
 # Capstone Project
 
-Link to public site: https://kimo2228.github.io/
+Link to public site: https://kimo2228.github.io/capstone-final/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
