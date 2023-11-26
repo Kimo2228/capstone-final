@@ -31,11 +31,11 @@ function Characters() {
   }, [currentPage, pageSize]);
 
   return (
-    <section className={styles["section__container"]}>
+    <section>
       <div>
-        <ul>
+        <ul className={styles["lax"]}>
           {characters.map((character) => (
-            <li key={character.id}>
+            <li key={character.id} className={styles["nax"]}>
               <Link to={`/character?api=${character.url}`}>
                 {character.name || character.aliases}
               </Link>
